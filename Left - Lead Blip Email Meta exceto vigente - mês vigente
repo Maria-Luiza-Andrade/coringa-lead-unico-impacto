@@ -1,5 +1,18 @@
 SELECT
-
+  Email;
+  HasOptedOutOfEmail;
+  Id;
+  Status;
+  Phone;
+  Estado_IAL__c;
+  Qual_equipamento_deseja fechar;
+  Data_ultimo_Contato_;
+  Interesse_de_negociação;
+  CreatedDate;
+  Desqualificado__c;
+  LeadSource;
+  LastName;
+  FirstName
 FROM Lead Blip Email Meta exceto vigente  AS EV
 LEFT JOIN Lead Blip Email Meta mês vigente AS MV
 ON EV.Email = MV.Email
