@@ -14,12 +14,14 @@ SELECT DISTINCT
   LastName;
   FirstName
 FROM Lead_Salesforce AS S
-WHERE S.CreatedDate < DATEADD(MONTH, -1, GETDATE())
+WHERE S.CreatedDate > '2023-01-01'
 AND
-  LeadSource IN ('Chat - Take Blip')
-  OR
-  LeadSource IN ('Email')
-  OR
-  LeadSource IN ('Meta')
+S.CreatedDate < DATEADD(MONTH, -1, GETDATE())
 AND
-HasOptedOutOfEmail = 'FALSE'
+  S.LeadSource IN ('Chat - Take Blip')
+  OR
+  S.LeadSource IN ('Email')
+  OR
+  S.LeadSource IN ('Meta')
+AND
+S.HasOptedOutOfEmail = 'FALSE'
