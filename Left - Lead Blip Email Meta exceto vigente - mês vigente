@@ -1,5 +1,6 @@
-SELECT t1.*
+SELECT
+
 FROM Lead Blip Email Meta exceto vigente  AS EV
-LEFT JOIN tabela2 AS t2
-ON t1.coluna_chave = t2.coluna_chave
-WHERE t2.coluna_chave IS NULL;
+LEFT JOIN Lead Blip Email Meta mês vigente AS MV
+ON EV.Email = MV.Email
+WHERE MV.Email IS NULL;
